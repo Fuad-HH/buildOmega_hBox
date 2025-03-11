@@ -1,0 +1,92 @@
+# user specific
+cmake-build-debug/
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+CTestTestfile.cmake
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+Makefile
+*.cmake
+
+# Build directories
+build/
+_build/
+out/
+bin/
+lib/
+
+# IDE-specific files
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+*.sln
+*.vcxproj*
+*.vcproj
+*.xcodeproj
+*.xcworkspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Local development environment files
+.env
+.env.local
+
+# Coverage files
+*.gcno
+*.gcda
+*.gcov
+
+# Dependency directories
+deps/
+third_party/
+
+# Misc
+*.swp
+*.swo
+*~

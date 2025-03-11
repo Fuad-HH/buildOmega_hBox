@@ -9,6 +9,7 @@
 
 void askFilenameAndWrite(Omega_h::Mesh &mesh);
 void writeVTK(Omega_h::Mesh &mesh, std::string filename);
+void writeGMSH(Omega_h::Mesh &mesh, std::string filename);
 
 int main(int argc, char **argv) {
     //********************* Read Input ************************//
@@ -90,9 +91,27 @@ void askFilenameAndWrite(Omega_h::Mesh &mesh) {
         printf("Invalid input. but VTK will be written.\n");
         writeVTK(mesh, filename+".vtk");
     }
+
+    printf("Want to write in GMSH format too? (y/n): ");
+    std::cin >> c;
+    if (c == 'y') {
+        writeGMSH(mesh, filename+".msh");
+    }
+    else if (c == 'n') {
+        printf("GMSH not written.\n");
+    }
+    else {
+        printf("Invalid input. but GMSH will be written.\n");
+        writeGMSH(mesh, filename+".msh");
+    }
 }
 
 void writeVTK(Omega_h::Mesh &mesh, std::string filename) {
     printf("Writing vtk to %s\n", filename.c_str());
     Omega_h::vtk::write_parallel(filename, &mesh);
+}
+
+void writeGMSH(Omega_h::Mesh &mesh, std::string filename) {
+    printf("Writing gmsh to %s\n", filename.c_str());
+    Omega_h::gmsh::write(filename, &mesh);
 }
